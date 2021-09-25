@@ -1,82 +1,94 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Link from "next/link";
+import { useEffect } from "react";
 
 export default function Home() {
+  const linkData = [
+    {
+      title: "TPKH Family Games",
+      links: [
+        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
+        { text: "SOP", href: "https://docs.google.com" },
+        { text: "Term of Reference", href: "https://docs.google.com" },
+      ],
+    },
+    {
+      title: "TPKH Family Games",
+      links: [
+        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
+        { text: "SOP", href: "https://docs.google.com" },
+        { text: "Term of Reference", href: "https://docs.google.com" },
+      ],
+    },
+    {
+      title: "TPKH Family Games",
+      links: [
+        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
+        { text: "SOP", href: "https://docs.google.com" },
+        { text: "Term of Reference", href: "https://docs.google.com" },
+      ],
+    },
+  ];
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
+    <>
+      <div className="items-center justify-center min-h-screen relative">
+        <Head>
+          <title>TPKH Festival</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main className="text-center z-50 text-gray-800 max-w-md mx-auto">
+          <img src="/Logo Final.png" alt="" className="max-w-xxs mx-auto" />
+          <h1 className="text-3xl font-bold">TPKH Festival 2021</h1>
+          {/* <h2 className="mx-auto py-1 px-2 rounded-full bg-gray-800 border-b-4 border-r-4 border-yellow-500 text-gray-50 my-4">
+            Pre-Event
+          </h2> */}
+          {linkData.map((data) => (
+            <>
+              <div className="flex flex-col space-y-2">
+                <h2 className="mx-8 text-left py-1 px-2 rounded-3xl bg-gray-800 border-4 border-yellow-500 text-gray-50 mt-8">
+                  {data.title}
+                </h2>
+                <ul className="mx-8 list-inside flex flex-col">
+                  {data.links.map((link) => (
+                    <li className="w-full">
+                      <a
+                        className="text-left block font-bold  hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="bx bx-right-arrow"></i>&nbsp;&nbsp;&nbsp;
+                        {link.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ))}
+          {/* <h3 className="text-2xl text-left">TPKH Family Games</h3> */}
+        </main>
+        <footer className="flex items-center justify-center w-full py-2 z-50 space-x-4 text-gray-800">
           <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="flex items-center justify-center font-bold  hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
+            href="https://instagram.com/tpkhfestival"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
+            <i className="bx bxl-instagram-alt text-4xl"></i>
+            TPKH Festival
           </a>
-
           <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
+            href="https://www.youtube.com/user/TPKHITS"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
+            <i className="bx bxl-youtube text-4xl"></i>
+            TPKH ITS
           </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
-  )
+        </footer>
+      </div>
+    </>
+  );
 }
