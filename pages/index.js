@@ -37,7 +37,7 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="text-center z-50 text-gray-800 max-w-md mx-auto">
-          <img src="/Logo Final.png" alt="" className="max-w-xxs mx-auto" />
+          <img src="/logo_final.png" alt="" className="max-w-xxs mx-auto" />
           <h1 className="text-3xl font-bold">TPKH Festival 2021</h1>
           {/* <h2 className="mx-auto py-1 px-2 rounded-full bg-gray-800 border-b-4 border-r-4 border-yellow-500 text-gray-50 my-4">
             Pre-Event
