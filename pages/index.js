@@ -6,6 +6,15 @@ export default function Home() {
   const linkData = [
     {
       title: "TPKH Family Games",
+      isActive: "dibuka",
+      links: [
+        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
+        { text: "SOP", href: "https://docs.google.com" },
+      ],
+    },
+    {
+      title: "TPKH Got Talent",
+      isActive: "belum",
       links: [
         { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
         { text: "SOP", href: "https://docs.google.com" },
@@ -13,7 +22,8 @@ export default function Home() {
       ],
     },
     {
-      title: "TPKH Family Games",
+      title: "Webinar TPKH",
+      isActive: "belum",
       links: [
         { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
         { text: "SOP", href: "https://docs.google.com" },
@@ -21,7 +31,8 @@ export default function Home() {
       ],
     },
     {
-      title: "TPKH Family Games",
+      title: "TPKH Charity Concert",
+      isActive: "belum",
       links: [
         { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
         { text: "SOP", href: "https://docs.google.com" },
@@ -31,6 +42,7 @@ export default function Home() {
   ];
   return (
     <>
+      <div id="gradient" className="fixed top-0 left-0 w-full"></div>
       <div className="items-center justify-center min-h-screen relative">
         <Head>
           <title>TPKH Festival</title>
@@ -38,28 +50,56 @@ export default function Home() {
         </Head>
         <main className="text-center z-50 text-gray-800 max-w-md mx-auto">
           <img src="/logo_final.png" alt="" className="max-w-xxs mx-auto" />
-          <h1 className="text-3xl font-bold">TPKH Festival 2021</h1>
+          <h1 className="text-gray-50 text-3xl font-bold gold-text-shadow-2">
+            TPKH Festival 2021
+          </h1>
           {/* <h2 className="mx-auto py-1 px-2 rounded-full bg-gray-800 border-b-4 border-r-4 border-yellow-500 text-gray-50 my-4">
             Pre-Event
           </h2> */}
           {linkData.map((data) => (
             <>
               <div className="flex flex-col space-y-2">
-                <h2 className="mx-8 text-left py-1 px-2 rounded-3xl bg-gray-800 border-4 border-yellow-500 text-gray-50 mt-8">
-                  {data.title}
-                </h2>
-                <ul className="mx-8 list-inside flex flex-col">
+                <div className="tracking-wide flex mx-4 text-left py-1 px-1 rounded-3xl bg-gray-800 border-2 border-yellow-500 text-gray-50 mt-8">
+                  <h2 className="flex-shrink ml-2">{data.title}</h2>
+                  <div className="flex ml-auto">
+                    {data.isActive === "dibuka" && (
+                      <p className="text-center bg-green-600 px-2 rounded-2xl">
+                        Dibuka
+                      </p>
+                    )}
+                    {data.isActive === "belum" && (
+                      <p className="text-center bg-yellow-600 px-2 rounded-2xl">
+                        Belum Dibuka
+                      </p>
+                    )}
+                    {data.isActive === "ditutup" && (
+                      <p className="text-center bg-red-600 px-2 rounded-2xl">
+                        Ditutup
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <ul className="mx-4 pl-8 list-inside flex flex-col space-y-2">
                   {data.links.map((link) => (
                     <li className="w-full">
-                      <a
-                        className="text-left block font-bold  hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <i class="bx bx-right-arrow"></i>&nbsp;&nbsp;&nbsp;
-                        {link.text}
-                      </a>
+                      {data.isActive === "dibuka" && (
+                        <a
+                          className="text-left block font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="bx bx-right-arrow"></i> {link.text}
+                        </a>
+                      )}
+                      {(data.isActive === "belum" ||
+                        data.isActive === "ditutup") && (
+                        <>
+                          <p className="text-left block font-bold 0 py-2 px-3 rounded-2xl cursor-default bg-gray-500 bg-opacity-20">
+                            <i class="bx bx-right-arrow"></i> {link.text}
+                          </p>
+                        </>
+                      )}
                     </li>
                   ))}
                 </ul>
@@ -68,25 +108,30 @@ export default function Home() {
           ))}
           {/* <h3 className="text-2xl text-left">TPKH Family Games</h3> */}
         </main>
-        <footer className="flex items-center justify-center w-full py-2 z-50 space-x-4 text-gray-800">
-          <a
-            className="flex items-center justify-center font-bold  hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
-            href="https://instagram.com/tpkhfestival"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="bx bxl-instagram-alt text-4xl"></i>
-            TPKH Festival
-          </a>
-          <a
-            className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
-            href="https://www.youtube.com/user/TPKHITS"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="bx bxl-youtube text-4xl"></i>
-            TPKH ITS
-          </a>
+        <h2 className="text-center font-bold mt-8 mb-2 text-gray-800">
+          Follow us on our social media
+        </h2>
+        <footer className="sticky bottom-0 text-center w-full z-50 text-gray-50">
+          <div className="gold-text-shadow bg-gray-800 border-t-2 border-yellow-500 rounded-t-2xl max-w-md mx-auto flex m-0 items-center justify-center space-x-4">
+            <a
+              className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
+              href="https://instagram.com/tpkhfestival"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bx bxl-instagram-alt text-4xl"></i>
+              TPKH Festival
+            </a>
+            <a
+              className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
+              href="https://www.youtube.com/user/TPKHITS"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="bx bxl-youtube text-4xl"></i>
+              TPKH ITS
+            </a>
+          </div>
         </footer>
       </div>
     </>
