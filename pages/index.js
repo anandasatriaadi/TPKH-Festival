@@ -8,8 +8,10 @@ export default function Home() {
       title: "TPKH Family Games",
       isActive: "dibuka",
       links: [
-        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
-        { text: "SOP", href: "https://docs.google.com" },
+        {
+          text: "Formulir Pendaftaran",
+          href: "https://forms.gle/q1RGEyZCAFKd1hQ46",
+        },
       ],
     },
     {
@@ -26,8 +28,6 @@ export default function Home() {
       isActive: "belum",
       links: [
         { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
-        { text: "SOP", href: "https://docs.google.com" },
-        { text: "Term of Reference", href: "https://docs.google.com" },
       ],
     },
     {
@@ -35,8 +35,6 @@ export default function Home() {
       isActive: "belum",
       links: [
         { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
-        { text: "SOP", href: "https://docs.google.com" },
-        { text: "Term of Reference", href: "https://docs.google.com" },
       ],
     },
   ];
@@ -84,7 +82,7 @@ export default function Home() {
                     <li className="w-full">
                       {data.isActive === "dibuka" && (
                         <a
-                          className="text-left block font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
+                          className="text-left block font-bold bg-gray-50 bg-opacity-40 hover:bg-opacity-60 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -95,9 +93,15 @@ export default function Home() {
                       {(data.isActive === "belum" ||
                         data.isActive === "ditutup") && (
                         <>
-                          <p className="text-left block font-bold 0 py-2 px-3 rounded-2xl cursor-default bg-gray-500 bg-opacity-20">
-                            <i class="bx bx-right-arrow"></i> {link.text}
-                          </p>
+                          <div className="relative">
+                            <p className="text-left block font-bold 0 py-2 px-3 rounded-2xl cursor-default bg-gray-500 bg-opacity-20">
+                              <i class="bx bx-right-arrow"></i> {link.text}
+                            </p>
+                            <div
+                              href="https://tpkhfestival.vercel.app"
+                              className="absolute top-0 bottom-0 left-0 right-0"
+                            ></div>
+                          </div>
                         </>
                       )}
                     </li>
@@ -112,15 +116,15 @@ export default function Home() {
           Follow us on our social media
         </h2>
         <footer className="sticky bottom-0 text-center w-full z-50 text-gray-50">
-          <div className="gold-text-shadow bg-gray-800 border-t-2 border-yellow-500 rounded-t-2xl max-w-md mx-auto flex m-0 items-center justify-center space-x-4">
+          <div className="text-sm gold-text-shadow py-1 bg-gray-800 border-t-2 border-l-2 border-r-2 border-yellow-500 rounded-t-2xl max-w-md mx-auto flex m-0 items-center justify-center space-x-4">
             <a
               className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
               href="https://instagram.com/tpkhfestival"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="bx bxl-instagram-alt text-4xl"></i>
-              TPKH Festival
+              <i className="bx bxl-instagram-alt text-2xl"></i>
+              &nbsp;&nbsp;TPKH Festival
             </a>
             <a
               className="flex items-center justify-center font-bold hover:bg-gray-50 hover:bg-opacity-30 hover:scale-105 duration-200 py-1 px-3 rounded-2xl"
@@ -128,8 +132,8 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="bx bxl-youtube text-4xl"></i>
-              TPKH ITS
+              <i className="bx bxl-youtube text-2xl"></i>
+              &nbsp;&nbsp;TPKH ITS
             </a>
           </div>
         </footer>
