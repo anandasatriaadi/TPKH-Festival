@@ -16,11 +16,12 @@ export default function Home() {
     },
     {
       title: "TPKH Got Talent",
-      isActive: "belum",
+      isActive: "dibuka",
       links: [
-        { text: "Formulir Pendaftaran", href: "https://docs.google.com" },
-        { text: "SOP", href: "https://docs.google.com" },
-        { text: "Term of Reference", href: "https://docs.google.com" },
+        { text: "Formulir Pendaftaran", href: "https://docs.google.com/forms/d/e/1FAIpQLSfZufYmyCV3nP4-wzuns2qdomt7bn2g-Cvf07t6Q10IP5dh3Q/viewform" },
+        { text: "Pengumpulan Bakat", href: "https://docs.google.com/forms/d/e/1FAIpQLScSPP5bVAVHd0MG6KSo-9_xReiomCtwkzkD2nzBM0VHOopogA/viewform" },
+        { text: "SOP", href: "https://docs.google.com/document/d/1p3aKsPQIXsxQtkfZEBce6LU7Ta44TbglswUXstP-EDk/edit" },
+        { text: "Term of Reference", href: "https://docs.google.com/document/d/1GCei3iAtUt4Y602Q8fQNnGTpZ0uqLo2fw8JthlHcuk4/edit?usp=sharing" },
       ],
     },
     {
