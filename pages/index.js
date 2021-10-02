@@ -6,7 +6,7 @@ export default function Home() {
   const linkData = [
     {
       title: "TPKH Family Games",
-      isActive: "dibuka",
+      isActive: "ditutup",
       links: [
         {
           text: "Formulir Pendaftaran",
