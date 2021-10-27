@@ -100,7 +100,7 @@ export default function Home() {
                     )}
                     {data.isActive === "preorder" && (
                       <p className="text-center bg-blue-600 px-2 rounded-2xl">
-                        Ditutup
+                        Preorder
                       </p>
                     )}
                   </div>
@@ -108,17 +108,17 @@ export default function Home() {
                 <ul className="mx-4 pl-8 list-inside flex flex-col space-y-2">
                   {data.links.map((link) => (
                     <li className="w-full">
-                      {data.isActive === "dibuka" ||
-                        (data.isActive === "preorder" && (
-                          <a
-                            className="text-left block font-bold bg-gray-50 bg-opacity-40 hover:bg-opacity-60 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <i class="bx bx-right-arrow"></i> {link.text}
-                          </a>
-                        ))}
+                      {(data.isActive === "dibuka" ||
+                        data.isActive === "preorder") && (
+                        <a
+                          className="text-left block font-bold bg-gray-50 bg-opacity-40 hover:bg-opacity-60 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <i class="bx bx-right-arrow"></i> {link.text}
+                        </a>
+                      )}
                       {(data.isActive === "belum" ||
                         data.isActive === "ditutup") && (
                         <>
