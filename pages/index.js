@@ -15,16 +15,6 @@ export default function Home() {
       ],
     },
     {
-      title: "TPKH Family Games",
-      isActive: "ditutup",
-      links: [
-        {
-          text: "Formulir Pendaftaran",
-          href: "https://forms.gle/q1RGEyZCAFKd1hQ46",
-        },
-      ],
-    },
-    {
       title: "TPKH Got Talent",
       isActive: "dibuka",
       links: [
@@ -43,6 +33,16 @@ export default function Home() {
         {
           text: "TOR",
           href: "https://drive.google.com/file/d/1tNGgwtYVJLewjBTD_U6GsCvMKDyvhwY_/view?usp=sharing",
+        },
+      ],
+    },
+    {
+      title: "TPKH Family Games",
+      isActive: "ditutup",
+      links: [
+        {
+          text: "Formulir Pendaftaran",
+          href: "https://forms.gle/q1RGEyZCAFKd1hQ46",
         },
       ],
     },
