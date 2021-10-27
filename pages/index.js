@@ -5,6 +5,16 @@ import { useEffect } from "react";
 export default function Home() {
   const linkData = [
     {
+      title: "Official Merchandise",
+      isActive: "preorder",
+      links: [
+        {
+          text: "Serba Serbi Merchandise",
+          href: "https://linktr.ee/UMUMTPKH",
+        },
+      ],
+    },
+    {
       title: "TPKH Family Games",
       isActive: "ditutup",
       links: [
@@ -18,10 +28,22 @@ export default function Home() {
       title: "TPKH Got Talent",
       isActive: "dibuka",
       links: [
-        { text: "Formulir Pendaftaran", href: "https://docs.google.com/forms/d/e/1FAIpQLSfZufYmyCV3nP4-wzuns2qdomt7bn2g-Cvf07t6Q10IP5dh3Q/viewform" },
-        { text: "Formulir Pengumpulan Karya", href: "https://docs.google.com/forms/d/e/1FAIpQLScSPP5bVAVHd0MG6KSo-9_xReiomCtwkzkD2nzBM0VHOopogA/viewform" },
-        { text: "SOP", href: "https://drive.google.com/file/d/19U6RV2DC29jX16vGSJ9o6BAUqO2gQSBR/view?usp=sharing" },
-        { text: "TOR", href: "https://drive.google.com/file/d/1tNGgwtYVJLewjBTD_U6GsCvMKDyvhwY_/view?usp=sharing" },
+        {
+          text: "Formulir Pendaftaran",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSfZufYmyCV3nP4-wzuns2qdomt7bn2g-Cvf07t6Q10IP5dh3Q/viewform",
+        },
+        {
+          text: "Formulir Pengumpulan Karya",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLScSPP5bVAVHd0MG6KSo-9_xReiomCtwkzkD2nzBM0VHOopogA/viewform",
+        },
+        {
+          text: "SOP",
+          href: "https://drive.google.com/file/d/19U6RV2DC29jX16vGSJ9o6BAUqO2gQSBR/view?usp=sharing",
+        },
+        {
+          text: "TOR",
+          href: "https://drive.google.com/file/d/1tNGgwtYVJLewjBTD_U6GsCvMKDyvhwY_/view?usp=sharing",
+        },
       ],
     },
     {
@@ -76,21 +98,27 @@ export default function Home() {
                         Ditutup
                       </p>
                     )}
+                    {data.isActive === "preorder" && (
+                      <p className="text-center bg-blue-600 px-2 rounded-2xl">
+                        Ditutup
+                      </p>
+                    )}
                   </div>
                 </div>
                 <ul className="mx-4 pl-8 list-inside flex flex-col space-y-2">
                   {data.links.map((link) => (
                     <li className="w-full">
-                      {data.isActive === "dibuka" && (
-                        <a
-                          className="text-left block font-bold bg-gray-50 bg-opacity-40 hover:bg-opacity-60 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
-                          href={link.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <i class="bx bx-right-arrow"></i> {link.text}
-                        </a>
-                      )}
+                      {data.isActive === "dibuka" ||
+                        (data.isActive === "preorder" && (
+                          <a
+                            className="text-left block font-bold bg-gray-50 bg-opacity-40 hover:bg-opacity-60 hover:scale-105 duration-200 py-2 px-3 rounded-2xl"
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <i class="bx bx-right-arrow"></i> {link.text}
+                          </a>
+                        ))}
                       {(data.isActive === "belum" ||
                         data.isActive === "ditutup") && (
                         <>
